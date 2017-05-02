@@ -1,0 +1,13 @@
+{% extends "home/base_home.html" %}
+
+{% load staticfiles %}
+
+{% block title %} Mi Proyecto Django {% endblock title %}
+
+{% block content %}
+
+  <h1>Bienvenido a mi proyecto con django</h1>
+
+  <a href="{% url 'home_app:entrada-lista' %}" class="waves-effect waves-light btn">blog</a>
+
+{% endblock content %}

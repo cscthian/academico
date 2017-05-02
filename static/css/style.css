@@ -1,0 +1,224 @@
+body {
+    background-color: #fafafa;
+}
+
+nav ul a {
+    color: #5280E5;
+}
+
+.icon-collapse {
+  color: #6C9AFB;
+}
+
+.slogan-neunapp {
+  color: #89B4FF;
+  font-size: .6em;
+  font-style: italic;
+  font-weight: 300;
+  left: 38px;
+  padding-bottom: 0.3em;
+  position: absolute;
+  top: 6px;
+}
+
+.values .values-section {
+    -webkit-box-shadow: inset 0px 8px 6px -6px rgba(0,0,0,0.3), inset 0 -8px 6px -6px rgba(0,0,0,.3);
+    -moz-box-shadow: inset 0px 8px 6px -6px rgba(0,0,0,0.3), inset 0 -8px 6px -6px rgba(0,0,0,.3);
+    box-shadow: inset 0px 8px 6px -6px rgba(0,0,0,0.3), inset 0 -8px 6px -6px rgba(0,0,0,.3);
+    margin: 0.7rem auto;
+    padding: 0.5rem 0;
+}
+
+.values-title {
+  color: #5381E6;
+}
+
+.values .card-panel .row {
+    margin-bottom: 0;
+}
+
+.values .card-panel .row .values-item{
+    background-color: #0091ea;
+    color: #fafafa;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 4px 8px;
+}
+
+.icon-services {
+    border: 1px solid #0091ea;
+    border-radius: 50%;
+    padding: 0px 21px;
+    color: #0091ea;
+}
+
+.title-section {
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+
+.technology .item .row {
+    margin-bottom: 0;
+}
+
+
+.technology-django, .technology-heroku, .technology-backbone{
+    border-radius: 5px;
+    margin: 0.5em 0;
+    padding: 5px 0 3px 3px;
+}
+.technology-django {
+    border: 2px solid #508067;
+}
+
+.technology-heroku {
+    border: 2px solid #57418F;
+}
+
+.technology-backbone {
+    border: 2px solid #015180;
+}
+
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #f7c5c0;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f7c5c0;
+	box-shadow:inset 0px 1px 0px 0px #f7c5c0;
+	background-color:#ed3c2f;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+}
+.myButton:hover {
+	background-color:#e4685d;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
+
+
+
+
+
+/* --------------------------------
+
+Basic style
+
+-------------------------------- */
+div[role="navigation"] {
+  text-align: center;
+}
+
+.cd-pagination {
+  width: 90%;
+  max-width: 768px;
+  margin: 2em auto 3em;
+  text-align: center;
+}
+.cd-pagination li {
+  /* hide numbers on small devices */
+  display: none;
+  margin: 0 .2em;
+}
+
+.cd-pagination li.button {
+  /* make sure prev next buttons are visible */
+  display: inline-block;
+}
+
+.cd-pagination a, .cd-pagination span {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* use padding and font-size to change buttons size */
+  padding: .6em .8em;
+  font-size: 1rem;
+}
+
+.cd-pagination a {
+  border: 1px solid #21A7E8;
+  border-radius: 0.25em;
+}
+
+.cd-pagination a:hover {
+  background-color: #f2f2f2;
+}
+
+.no-touch .cd-pagination a:hover {
+  background-color: #f2f2f2;
+}
+
+.cd-pagination a:active {
+  /* click effect */
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  transform: scale(0.9);
+}
+.cd-pagination a.disabled {
+  /* button disabled */
+  border: 1px solid rgba(169, 199, 207, 0.6);
+  color: rgba(169, 199, 207, 0.6);
+  pointer-events: none;
+}
+.cd-pagination a.disabled::before, .cd-pagination a.disabled::after {
+  opacity: .4;
+}
+.cd-pagination .button:first-of-type a::before {
+  content: '\00ab  ';
+}
+.cd-pagination .button:last-of-type a::after {
+  content: ' \00bb';
+}
+.cd-pagination .current {
+  /* selected number */
+  background-color: #26a69a;
+  border-color: #64a281;
+  color: #ffffff;
+  pointer-events: none;
+}
+@media only screen and (min-width: 768px) {
+  .cd-pagination li {
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-pagination {
+    margin: 4em auto 6em;
+  }
+}
+
+
+/* --------------------------------
+
+Footer content
+
+-------------------------------- */
+
+.footer-title {
+  font-size: 1.1em;
+  text-align: center;
+  display: block;
+}
+
+.footer-info {
+  margin: 2px 0;
+  font-size: 0.9em;
+}

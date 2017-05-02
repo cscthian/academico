@@ -1,0 +1,38 @@
+{% extends "home/base_home.html" %}
+
+{% load staticfiles %}
+
+{% block title %} Lista de entradas {% endblock title %}
+
+{% block content %}
+<div class="container">
+<h1>Lista de Entradas</h1>
+
+<form method="get" class="form-horizontal">{% csrf_token %}
+    <div class="row">
+        <div class="medium-4 columns">
+                {{form.buscar}}
+        </div>
+    </div>
+</form>
+
+{% for e in entradas  %}
+  <div class="row">
+    <div class="col s12 m7">
+      <div class="card small">
+        <div class="card-image">
+          <img src="{{ e.image.url }}">
+          <span class="card-title">{{e.title}}</span>
+        </div>
+        <div class="card-content">
+          <p>{{e.content|safe|truncatechars_html:300}}</p>
+        </div>
+        <div class="card-action">
+          <a href="{% url 'home_app:entrada-detalle' e.slug %}">Ver Mas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock content %}
