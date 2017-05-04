@@ -11,6 +11,9 @@
     <div class="nav-wrapper">
       <div class="col s12">
         <ul class="left hide-on-med-and-down">
+          <li>
+            <a href="{% url 'home_app:entrada-lista' %}" class="breadcrumb">Todos</a>
+          </li>
           {% for c in categorys %}
           <li>
             <a href="{% url 'home_app:entrada-filtro' c.name %}" class="breadcrumb">{{c.name}}</a>

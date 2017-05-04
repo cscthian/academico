@@ -63,18 +63,18 @@ class EntryDetailView(DetailView):
 class EntryBuscarListView(ListView):
     """vista que busca una entrada"""
     context_object_name = 'entradas'
-    paginate_by = 8
-    template_name = 'home/list_entrada.html'
+    #paginate_by = 8
+    template_name = 'home/lista.html'
 
     def get_context_data(self, **kwargs):
-        context = super(EntryListView, self).get_context_data(**kwargs)
+        context = super(EntryBuscarListView, self).get_context_data(**kwargs)
         context['form'] = BuscarForm
         return context
 
     def get_queryset(self):
         q = self.request.GET.get("buscar", '')
         return Entry.objects.filter(
-            title=q,
+            title__icontains=q,
         )
 
 

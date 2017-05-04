@@ -24,6 +24,13 @@
     </div>
   </nav>
 
+  <form method="get">{% csrf_token %}
+    
+    {{form.buscar}}
+    
+    <button type="submit" class="small radius bg-blanco button left">Buscar</button>
+  </form>
+
 {% for e in entradas  %}
   <div class="row">
     <div class="col s12 m7">

@@ -7,7 +7,7 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'academicodb',
+        'NAME': 'cursodb',
         'USER': 'curso',
         'PASSWORD': 'curso123',
         'HOST': 'localhost',

@@ -5,10 +5,10 @@ from django import forms
 
 class BuscarForm(forms.Form):
     buscar = forms.CharField(
-        label='Buscar',
+        label='Search',
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'buscar por ..',
+                'placeholder': 'busca una entrada ..',
             }
         )
     )

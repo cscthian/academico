@@ -16,9 +16,14 @@ urlpatterns = [
         views.EntryListView.as_view(),
         name="entrada-lista"
     ),
+    url(
+        r'^entrada/buscar/$',
+        views.EntryBuscarListView.as_view(),
+        name="entrada-buscar"
+    ),
     #url para mostrar resultdos de filtro
     url(
-        r'^lista-entradas-por/(?P<filtro>[-\w]+)/$',
+        r'^lista-de-entradas-segun-flitro/(?P<filtro>[-\w]+)/$',
         views.EntryFilterView.as_view(),
         name="entrada-filtro"
     ),
