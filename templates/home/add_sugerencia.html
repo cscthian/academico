@@ -1,0 +1,18 @@
+{% extends "home/base_home.html" %}
+
+{% load staticfiles %}
+
+{% block title %} Agregar Sugerencia {% endblock title %}
+
+{% block content %}
+
+  <h1>Nueva Sugerencia</h1>
+
+  <form role="form" method="POST" enctype="multipart/form-data">{% csrf_token %}
+  
+  {{form}}
+
+  <button type="submit">Guardar</button>
+ </form>
+
+{% endblock content %}

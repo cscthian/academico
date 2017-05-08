@@ -11,8 +11,8 @@ from django.views.generic import (
 from django.core.urlresolvers import reverse_lazy, reverse
 
 #app home
-from .models import Category, Entry
-from .forms import BuscarForm
+from .models import Category, Entry, Sugerencia
+from .forms import BuscarForm, SugerenciaForm
 
 
 class IndexView(TemplateView):
@@ -78,8 +78,16 @@ class EntryBuscarListView(ListView):
         )
 
 
-# class SugerenciaCreateView(CreateView):
-#     model = Sugerencia
-#     form_class = SugerenciaForm
-#     success_url = '.'
-#     template_name = 'home/add_sugerencia.html'
+class SugerenciaCreateView(CreateView):
+    model = Sugerencia
+    form_class = SugerenciaForm
+    success_url = reverse_lazy('home_app:sugerencia-list')
+    template_name = 'home/add_sugerencia.html'
+
+
+class ListaSugerenciaView(ListView):
+    context_object_name = 'sugerencias'
+    template_name = 'home/lista_sugerencia.html'
+
+    def get_queryset(self):
+        return Sugerencia.objects.all()

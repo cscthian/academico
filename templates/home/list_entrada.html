@@ -14,6 +14,9 @@
           <li>
             <a href="{% url 'home_app:entrada-lista' %}" class="breadcrumb">Todos</a>
           </li>
+          <li>
+            <a href="{% url 'home_app:sugerencia-add' %}" class="breadcrumb">sugerencias</a>
+          </li>
           {% for c in categorys %}
           <li>
             <a href="{% url 'home_app:entrada-filtro' c.name %}" class="breadcrumb">{{c.name}}</a>

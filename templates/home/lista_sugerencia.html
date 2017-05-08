@@ -1,0 +1,15 @@
+{% extends "home/base_home.html" %}
+
+{% load staticfiles %}
+
+{% block title %} Mi Proyecto Django {% endblock title %}
+
+{% block content %}
+
+  <h1>Lista de sugerencias</h1>
+
+  {% for s in sugerencias %}
+  	<p>{{s.title}}</p>
+  {%endfor%}
+
+{% endblock content %}

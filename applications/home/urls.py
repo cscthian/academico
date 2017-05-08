@@ -32,4 +32,15 @@ urlpatterns = [
         views.EntryDetailView.as_view(),
         name="entrada-detalle"
     ),
+    url(
+        r'^agregar-sugencia/$',
+        views.SugerenciaCreateView.as_view(),
+        name="sugerencia-add"
+    ),
+    url(
+        r'^lista-de-sugerencias/$',
+        views.ListaSugerenciaView.as_view(),
+        name="sugerencia-list"
+    ),
+
 ]

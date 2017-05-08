@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from .models import Category, Entry
+from .models import Category, Entry, Sugerencia
 
 
 # class EntryAdmin(admin.ModelAdmin):
@@ -15,3 +15,4 @@ from .models import Category, Entry
 
 admin.site.register(Category)
 admin.site.register(Entry)
+admin.site.register(Sugerencia)

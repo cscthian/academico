@@ -49,17 +49,17 @@ class Entry(models.Model):
         super(Entry, self).save(*args, **kwargs)
 
 
-# @python_2_unicode_compatible
-# class Sugerencia(models.Model):
-#
-#     title = models.CharField('titulo', max_length=200)
-#     contenido = models.TextField(blank=True)
-#     email = models.EmailField()
-#
-#     class Meta:
-#         verbose_name = 'Sugerencia'
-#         verbose_name_plural = 'Sugerencias'
-#         ordering = ["-created"]
-#
-#     def __str__(self):
-#         return self.title
+@python_2_unicode_compatible
+class Sugerencia(models.Model):
+
+    title = models.CharField('Titulo', max_length=300)
+    contenido = models.TextField(blank=True)
+    name = models.CharField('Nombre',max_length=200)
+    email = models.EmailField()
+
+    class Meta:
+        verbose_name = 'Sugerencia'
+        verbose_name_plural = 'Sugerencias'
+
+    def __str__(self):
+        return self.title
