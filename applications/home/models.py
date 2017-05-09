@@ -63,3 +63,33 @@ class Sugerencia(models.Model):
 
     def __str__(self):
         return self.title
+
+
+@python_2_unicode_compatible
+class Subscription(models.Model):
+    first_name = models.CharField('nombres', max_length=50, null=True)
+    last_name = models.CharField('apellidos', max_length=50, null=True)
+    email = models.EmailField('E-mail', max_length=50, unique=True)
+    class Meta:
+        verbose_name = 'Suscripcion'
+        verbose_name_plural = 'Suscripciones'
+
+    def __str__(self):
+        return self.first_name
+
+
+# @python_2_unicode_compatible
+# class Contacto(models.Model):
+#     name = models.CharField('nombre', max_length=50)
+#     email = models.EmailField('E-mail')
+#     phone = models.CharField('Telefono', max_length=50)
+#     business = models.CharField('Asunto', max_length=50)
+#     horario = models.CharField('Sugiera una Hora Para Contactarlo', max_length=50)
+#     menssage = models.CharField('¿Cual es tu Consulta?', max_length=200)
+
+#     class Meta:
+#         verbose_name = 'Contacto'
+#         verbose_name_plural = 'Contactenos'
+
+#     def __str__(self):
+#         return self.name

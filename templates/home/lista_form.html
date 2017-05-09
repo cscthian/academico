@@ -1,0 +1,66 @@
+{% extends "home/base_home.html" %}
+
+{% load staticfiles %}
+
+{% block title %} Mi Proyecto Django {% endblock title %}
+
+{% block content %}
+
+<!-- <div class="row">
+	<ul class="cd-pagination"> -->
+            <!-- {% if page_obj.has_previous %}
+                <li class="button">
+                    <a href="?page={{ page_obj.previous_page_number }}"><i>Anterior</i></a>
+                </li>
+            {% else %}
+                <li class="button">
+                    <a class="disabled" href="#"><i>Anterior</i></a>
+                </li>
+            {% endif %} -->
+            <!-- {% for num_page in paginator.page_range %}
+
+                {% if page_obj.number|add:'-5' <= num_page and page_obj.number|add:"5" >= num_page %}
+
+                    {%if page_obj.number == num_page %}
+
+                        <li><a class="current" href="#">{{ num_page }}</a></li>
+                    {% else %}
+                        <li><a href="?page={{ num_page }}">{{ num_page }}</a></li>
+                    {% endif %}
+                {% endif %}
+                  
+            {% endfor %} -->
+            
+<!--         </ul>
+</div> -->
+
+<div class="row">
+	<h3>Lista de Entradas</h3>
+{% for e in lista_entradas  %}
+  <div class="row">
+    <div class="col s12 m7">
+      <div class="card small">
+        <div class="card-image">
+          <img src="{{ e.image.url }}">
+          <span class="card-title">{{e.title}}</span>
+        </div>
+        <div class="card-content">
+          <p>{{e.content|safe|truncatechars_html:300}}</p>
+        </div>
+        <div class="card-action">
+          <a href="{% url 'home_app:entrada-detalle' e.slug %}">Ver Mas</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+<div class="row">
+	<h3>Suscribete</h3>
+	<form role="form" method="POST" enctype="multipart/form-data">{% csrf_token %}
+	{{form}}
+	<button type="submit">Suscribir</button>
+ </form>
+</div>
+
+{% endblock content %}

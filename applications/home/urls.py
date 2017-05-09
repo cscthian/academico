@@ -42,5 +42,10 @@ urlpatterns = [
         views.ListaSugerenciaView.as_view(),
         name="sugerencia-list"
     ),
+    url(
+        r'^entradas-con-suscripcion/$',
+        views.ListaConFormView.as_view(),
+        name="entrada-suscripcion"
+    ),
 
 ]
