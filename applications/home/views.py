@@ -8,6 +8,7 @@ from django.views.generic import (
     UpdateView,
     CreateView,
 )
+from django.views.generic.edit import FormMixin
 from django.core.urlresolvers import reverse_lazy, reverse
 
 #app home
@@ -91,3 +92,40 @@ class ListaSugerenciaView(ListView):
 
     def get_queryset(self):
         return Sugerencia.objects.all()
+
+
+# class ListaConFormView(FormMixin, ListView):
+#     context_object_name = 'entree_list'
+#     template_name = 'home/lista_form.html'
+#     paginate_by = 4
+#     form_class = SuscripcionForm
+#     success_url = reverse_lazy('home_app:entrada-lista')
+#
+#     def get_queryset(self):
+#         return Entry.objects.order_by('-created')
+#
+#     def get_context_data(self, **kwargs):
+#         context = super(ListaConFormView, self).get_context_data(**kwargs)
+#         context['form'] = self.get_form()
+#         return context
+#
+#     def post(self, request, *args, **kwargs):
+#         form = self.get_form()
+#         if form.is_valid():
+#             return self.form_valid(form)
+#         else:
+#             return self.form_invalid(form)
+#
+#     def form_valid(self, form):
+#         first_name = form.cleaned_data['first_name']
+#         last_name = form.cleaned_data['last_name']
+#         email = form.cleaned_data['email']
+#         #validamos si el email existe
+#         if Subscription.objects.filter(email=user).count()==0:
+#             subscription = Subscription(
+#                 first_name=first_name,
+#                 last_name=last_name,
+#                 email=email,
+#             )
+#             subscription.save()
+#         return super(ListaConFormView, self).form_valid(form)
